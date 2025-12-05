@@ -13,6 +13,7 @@
             <div class="navbar-nav">
                 <a class="nav-link" href="alunos/index.php">Alunos</a>
                 <a class="nav-link" href="cursos/index.php">Cursos</a>
+                <a class="nav-link" href="matricula.php">Matrícula</a>
             </div>
         </div>
     </nav>
@@ -41,6 +42,15 @@
                         <h5 class="card-title">Gerenciar Cursos</h5>
                         <p class="card-text">Cadastre, edite e visualize cursos</p>
                         <a href="cursos/index.php" class="btn btn-success">Acessar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Matrícula</h5>
+                        <p class="card-text">Matricular Alunos</p>
+                        <a href="alunos/index.php" class="btn btn-primary">Acessar</a>
                     </div>
                 </div>
             </div>

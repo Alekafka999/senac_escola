@@ -1,17 +1,17 @@
 <?php
 require_once '../config/database.php';
-require_once '../classes/Aluno.php';
+
 
 $database = new Database();
 $db = $database->getConnection();
-$aluno = new Aluno($db);
+$aluno = new Matricula($db);
 
 if ($_POST) {
-    $aluno->nome = $_POST['nome'];
-    $aluno->email = $_POST['email'];
-    $aluno->cpf = $_POST['cpf'];
-    $aluno->telefone = $_POST['telefone'];
-    $aluno->ativo = $_POST['ativo'];
+    $matricula->nome = $_POST['nome'];
+    $matricula->email = $_POST['email'];
+    $matricula->cpf = $_POST['cpf'];
+    $matricula->telefone = $_POST['telefone'];
+    $matricula->ativo = $_POST['ativo'];
 
     if ($aluno->create()) {
         $message = "Aluno cadastrado com sucesso!";
@@ -29,7 +29,7 @@ $stmt = $aluno->readAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciar Alunos</title>
-    <link href="../style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -38,13 +38,13 @@ $stmt = $aluno->readAll();
             <div class="navbar-nav">
                 <a class="nav-link active" href="index.php">Alunos</a>
                 <a class="nav-link" href="../cursos/index.php">Cursos</a>
-                <a class="nav-link" href="../matricula.php">Matrícula</a>
+                <a class="nav-link" href="matricula.php">Matrícula</a>
             </div>
         </div>
     </nav>
 
     <div class="container mt-4">
-        <h2>Gerenciar Alunos</h2>
+        <h2>Gerenciar Matrículas</h2>
 
         <?php if (isset($message)): ?>
             <div class="alert alert-info"><?php echo $message; ?></div>
@@ -52,7 +52,7 @@ $stmt = $aluno->readAll();
 
         <div class="row">
             <div class="col-md-4">
-                <h4>Cadastrar Novo Aluno</h4>
+                <h4>Fazer Nova Matrícula</h4>
                 <form method="post">
                     <div class="mb-3">
                         <label class="form-label">Nome</label>
