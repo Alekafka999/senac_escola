@@ -1,7 +1,7 @@
 <?php
 class Database {
     private $host = 'localhost';
-    private $db_name = 'escola_senac';
+    private $db_name = 'db_escola';
     private $username = 'root';
     private $password = '';
     private $conn;

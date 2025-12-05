@@ -1,6 +1,6 @@
 -- Criação do banco de dados
-CREATE DATABASE IF NOT EXISTS escola_senac;
-USE escola_senac;
+CREATE DATABASE IF NOT EXISTS de_escola;
+USE db_escola;
 
 -- Tabela de alunos
 CREATE TABLE tb_alunos (
