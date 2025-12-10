@@ -1,45 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matrícula - Aluno</title>
-    </head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matrícula - Aluno</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
 <body>
-    <h2>Sistema de Matrícula do Aluno</h2>
+  <h2>Sistema de Matrícula do Aluno</h2>
 
-<p>Use atributos múltiplos para o cadastro, como nome do aluno + curso</p>
-<p>O usuário do sistema deve:</p>
+  <p>Use atributos múltiplos para o cadastro, como nome do aluno + curso</p>
+  <p>O usuário do sistema deve:</p>
 
-<ol type="i">
-  <li>Fazer o cadastro das informações do aluno previamente no módulo: <a href="alunos/index.php"_blank>Cadastro de Alunos</a></li>
-  <li>No sistema de cadastro do curso disponível em <a href="cursos/index.php"_blank>Cadastro de Cursos</a>, o usuário do sistema deve cadastrar os cursos oferecidos pela instituição</li>
-  <li>Ao fazer o cadastro da matrícula, o usuário do sistema deve selecionar o aluno previamente cadastrado e o curso oferecido pela instituição.</li>
-  <li>Para concluir a matrícula, o usuário do sistema deve clicar no botão "Concluir Matrícula".
-</li>
-</ol>
+  <ol type="i">
+    <li>Fazer o cadastro das informações do aluno previamente no módulo: <a href="alunos/index.php" _blank>Cadastro de
+        Alunos</a></li>
+    <li>No sistema de cadastro do curso disponível em <a href="cursos/index.php" _blank>Cadastro de Cursos</a>, o
+      usuário do sistema deve cadastrar os cursos oferecidos pela instituição</li>
+    <li>Ao fazer o cadastro da matrícula, o usuário do sistema deve selecionar o aluno previamente cadastrado e o curso
+      oferecido pela instituição.</li>
+    <li>Para concluir a matrícula, o usuário do sistema deve clicar no botão "Concluir Matrícula".
+    </li>
+  </ol>
+
+  <select class="form-select" aria-label="Selecione o Aluno">
+  <option selected>Selecione o Aluno</option>
+  <option value="1">Alessandra</option>
+  <option value="2">Alexandre</option>
+  <option value="3">Alex</option>
+  <option value="4">Xandão</option>
+  <option value="5">Parça</option>
+</select>
+<br><br>
 
 
-<form action="">
-  <label for="">Selecione o aluno:</label>
-  <select id="aluno" name="aluno" size="1">
-    <option>Alessandra</option>
-    <option>Alexandre</option>
-    <option>Alex</option>
-    <option>Xandão</option>
-  </select><br><br>
-
-<form action="">
-  <label for="">Selecione o curso:</label>
-  <select id="curso" name="curso" size="1" multiple>
+  <p>Selecione o Curso</p>
+  <select class="form-select" aria-label="Selecione o Curso" size="1" multiple>
     <option value="curso1">Administração</option>
     <option value="curso2">Ciência da Computação</option>
-    <option value="curso3">Engenharia de Software</option>
+    <option value="curso3">Engenharia da Computação</option>
     <option value="curso4">Sistemas de Informação</option>
-  </select><br><br>
-  <input type="submit" value="Concluir Matrícula">
+    <option value="curso5">Rádio e TV</option>
+</select>
+     <input type="submit" value="Concluir Matrícula">
 
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
-</body>
-</html>
+
