@@ -1,4 +1,5 @@
-$sql = ''
+<?php
+$sql = "
   SELECT
     tb_matricula.id,
     tb_alunos.nome AS aluno,
@@ -7,28 +8,33 @@ $sql = ''
     tb_matricula.ativo
   FROM tb_matricula
   INNER JOIN tb_alunos ON tb_alunos.id = tb_matricula.id_aluno
-  INNER JOIN tb_cursos ON tb_cursos.id = tb_matricula.ide_cursos";
+  INNER JOIN tb_cursos ON tb_cursos.id = tb_matricula.id_cursos
+";
 
+if (isset($matriculas)) {
+    foreach($matriculas as $matricula): ?>
 
-  TABELA
-    FOREACH($matriculas as $matricula):
+    <tr>
+        <td><?php echo $matricula['aluno']; ?></td>
+        <td><?php echo $matricula['curso']; ?></td>
 
-    <?php echo matricula ['aluno'];?>
-
-    <td>
-        <?php
-                if($matricula['Ativo']) == 1) {
+        <td>
+            <?php
+                if ($matricula['ativo'] == 1) {
                     echo "Ativo";
-                }else{
+                } else {
                     echo "Inativo";
-                ]
+                }
             ?>
-    </td>
+        </td>
 
-    <td>
-        <?php
-        echo date("d/m/Y H:i:s", strtime($matricula['data_matricula']));
-        ?>
-    </td>
+        <td>
+            <?php
+            echo date("d/m/Y H:i:s", strtotime($matricula['data_cadastro']));
+            ?>
+        </td>
+    </tr>
+    <?php endforeach;
+}
+?>
 
-    

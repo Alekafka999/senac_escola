@@ -29,7 +29,7 @@ $stmt = $aluno->readAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciar Alunos</title>
-    <link href="../style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -98,13 +98,13 @@ $stmt = $aluno->readAll();
                     <tbody>
                         <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
                         <tr>
-                            <td><?php echo $row['id']; ?></td>
-                            <td><?php echo $row['nome']; ?></td>
-                            <td><?php echo $row['email']; ?></td>
-                            <td><?php echo $row['cpf']; ?></td>
-                            <td><?php echo $row['telefone']; ?></td>
-                            <td><?php echo date('d/m/Y H:i', strtotime($row['data_cadastro'])); ?></td>
-                            <td><?php echo $row['ativo'] ? 'Ativo' : 'Inativo'; ?></td>
+                            <td><?php echo isset($row['id']) ? $row['id'] : ''; ?></td>
+                            <td><?php echo isset($row['nome']) ? $row['nome'] : ''; ?></td>
+                            <td><?php echo isset($row['email']) ? $row['email'] : ''; ?></td>
+                            <td><?php echo isset($row['cpf']) ? $row['cpf'] : ''; ?></td>
+                            <td><?php echo isset($row['telefone']) ? $row['telefone'] : ''; ?></td>
+                            <td><?php echo isset($row['data_cadastro']) ? date('d/m/Y H:i', strtotime($row['data_cadastro'])) : ''; ?></td>
+                            <td><?php echo (isset($row['ativo']) && $row['ativo'] == 1) ? 'Ativo' : 'Inativo'; ?></td>
                         </tr>
                         <?php endwhile; ?>
                     </tbody>

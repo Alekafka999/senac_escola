@@ -1,10 +1,11 @@
 <?php
-require_once '../config/database.php';
+require_once './config/database.php';
+require_once __DIR__ . '/classes/Matricula.php';
 
 
 $database = new Database();
 $db = $database->getConnection();
-$aluno = new Matricula($db);
+$matricula = new Matricula($db);
 
 if ($_POST) {
     $matricula->nome = $_POST['nome'];
@@ -13,14 +14,14 @@ if ($_POST) {
     $matricula->telefone = $_POST['telefone'];
     $matricula->ativo = $_POST['ativo'];
 
-    if ($aluno->create()) {
-        $message = "Aluno cadastrado com sucesso!";
+    if ($matricula->create()) {
+        $message = "Matr�cula cadastrada com sucesso!";
     } else {
-        $message = "Erro ao cadastrar aluno.";
+        $message = "Erro ao cadastrar matr�cula.";
     }
 }
 
-$stmt = $aluno->readAll();
+$stmt = $matricula->readAll();
 ?>
 
 <!DOCTYPE html>
@@ -34,10 +35,10 @@ $stmt = $aluno->readAll();
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a class="navbar-brand" href="../index.php">Sistema Escola</a>
+            <a class="navbar-brand" href="./index.php">Sistema Escola</a>
             <div class="navbar-nav">
-                <a class="nav-link active" href="index.php">Alunos</a>
-                <a class="nav-link" href="../cursos/index.php">Cursos</a>
+                <a class="nav-link active" href="./alunos/index.php">Alunos</a>
+                <a class="nav-link" href="./cursos/index.php">Cursos</a>
                 <a class="nav-link" href="matricula.php">Matrícula</a>
             </div>
         </div>

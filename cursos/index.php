@@ -37,8 +37,9 @@ $stmt = $curso->readAll();
         <div class="container">
             <a class="navbar-brand" href="../index.php">Sistema Escola</a>
             <div class="navbar-nav">
-                <a class="nav-link" href="../alunos/index.php">Alunos</a>
-                <a class="nav-link active" href="index.php">Cursos</a>
+                <a class="nav-link active" href="index.php">Alunos</a>
+                <a class="nav-link" href="../cursos/index.php">Cursos</a>
+                <a class="nav-link" href="../matricula.php">Matrícula</a>
             </div>
         </div>
     </nav>

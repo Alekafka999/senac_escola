@@ -1,5 +1,5 @@
 -- Criação do banco de dados
-CREATE DATABASE IF NOT EXISTS de_escola;
+CREATE DATABASE IF NOT EXISTS db_escola;
 USE db_escola;
 
 -- Tabela de alunos
@@ -10,7 +10,7 @@ CREATE TABLE tb_alunos (
     cpf VARCHAR(14) NOT NULL UNIQUE,
     telefone VARCHAR(15) NOT NULL,
     data_cadastro DATETIME DEFAULT CURRENT_TIMESTAMP,
-    status ENUM('ativo', 'inativo') DEFAULT 'ativo'
+    ativo INT DEFAULT 1
 );
 
 -- Tabela de cursos
@@ -22,5 +22,5 @@ CREATE TABLE tb_cursos (
     valor DECIMAL(10,2) NOT NULL,
     categoria ENUM('Exatas', 'Humanas', 'Biológicas') NOT NULL,
     data_cadastro DATETIME DEFAULT CURRENT_TIMESTAMP,
-    status ENUM('ativo', 'inativo') DEFAULT 'ativo'
+    ativo INT DEFAULT 1
 );
